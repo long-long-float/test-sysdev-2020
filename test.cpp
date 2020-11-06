@@ -4,7 +4,10 @@ using namespace std;
 
 int main(int argc, char** argv) {
   int ary[] = {1, 2, 3, 4};
-  int x;
+
+  for (auto &e : ary) {
+    cout << e << endl;
+  }
 
   return 0;
 }
