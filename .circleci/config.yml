@@ -4,5 +4,6 @@ jobs:
     docker:
       - image: frolvlad/alpine-gxx
     steps:
+      - checkout
       - run: g++ test.cpp -o test
       - run: ./test
