@@ -1,13 +1,15 @@
 #include <iostream>
-#include <string.h>
+#include <vector>
+#include <cassert>
+
+#include "./vector_sum.h"
+
 using namespace std;
 
 int main(int argc, char** argv) {
-  int ary[] = {1, 2, 3, 4};
+  vector<int> ary {1, 2, 3, 4};
 
-  for (int i = 0; i < argc; i++) {
-    cout << i << ": " << argv[i] << endl;
-  }
+  assert(sum(ary) == 10);
 
   return 0;
 }
