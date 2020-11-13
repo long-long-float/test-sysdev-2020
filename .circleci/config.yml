@@ -5,5 +5,9 @@ jobs:
       - image: frolvlad/alpine-gxx
     steps:
       - checkout
-      - run: g++ test.cpp -o test
+      - run: g++ --std=c++11 test.cpp -o test
       - run: ./test
+      - run: g++ --std=c++11 main.cpp -o sum
+      - store_artifacts:
+          path: ./sum
+

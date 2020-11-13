@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
   assert(sum(ary1) == 10);
 
   vector<int> ary2 {1, 2, 3, 4, -10};
-  assert(sum(ary2) == 10);
+  assert(sum(ary2) == 0);
 
   return 0;
 }
