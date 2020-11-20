@@ -2,12 +2,17 @@ version: 2
 jobs:
   build:
     docker:
-      - image: frolvlad/alpine-gxx
+      - image: ubuntu
     steps:
+      - run: apt-get update
+      - run: apt-get install -y build-essential git
+      - add_ssh_keys:
+          fingerprints:
+            - "b8:2a:ac:42:4a:30:65:15:7c:19:62:c6:6f:4b:2c:31"
       - checkout
       - run: g++ --std=c++11 test.cpp -o test
       - run: ./test
       - run: g++ --std=c++11 main.cpp -o sum
       - store_artifacts:
           path: ./sum
-
+      - run: sh .circleci/deploy.sh
